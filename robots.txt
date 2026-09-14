@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hlsdeutschland.de/sitemap.xml
