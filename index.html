@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>HLS</title>
+<title>HLS Deutschland GmbH · Holding für Mobilität, Infrastruktur und Energie · Leipzig</title>
+<meta name="description" content="HLS Deutschland GmbH ist eine privat gehaltene Holding mit Sitz in Leipzig. Beteiligungen und Projekte in Mobility, Digital Infrastructure, Energy, Leasing und Industrial Services. Aktuell aktiv im Bereich Mobility: Schienenersatzverkehr, Busdepot-Infrastruktur und PEK.digital.">
+<link rel="canonical" href="https://hlsdeutschland.de/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="HLS Deutschland GmbH">
+<meta property="og:description" content="Privat gehaltene Holding mit Sitz in Leipzig. Beteiligungen und Projekte in Mobilität, Infrastruktur und Energie.">
+<meta property="og:url" content="https://hlsdeutschland.de/">
+<meta property="og:image" content="https://hlsdeutschland.de/crest.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HLS Deutschland GmbH",
+  "legalName": "HLS (Handel, Leasing, Services) Deutschland GmbH",
+  "url": "https://hlsdeutschland.de/",
+  "logo": "https://hlsdeutschland.de/crest.png",
+  "email": "admin@hlsdeutschland.de",
+  "telephone": "+49 341 86265625",
+  "vatID": "DE331770803",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Merkurhaus, Markgrafenstraße 2",
+    "postalCode": "04109",
+    "addressLocality": "Leipzig",
+    "addressCountry": "DE"
+  },
+  "founder": { "@type": "Person", "name": "Gerhard Geschwinder", "jobTitle": "Geschäftsführer" },
+  "sameAs": ["https://www.pek.digital"]
+}
+</script>
 <style>
   :root{
     --ink:#1b1a18;
     --paper:#f4f1ea;
+    --paper-2:#ece8df;
     --line:#cbc6ba;
     --muted:#6f6a60;
     --accent:#9a2b28;
-    --blue:#2f5aa8;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -24,45 +54,57 @@
     line-height:1.6;
     overflow-x:hidden;
   }
+  a{color:inherit}
   .frame{
-    min-height:100vh;
     display:flex;
     flex-direction:column;
     padding:clamp(1.6rem,4vw,3.2rem);
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .sans{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--muted);
   }
 
   /* Top bar */
   .top{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:baseline;
     border-bottom:1px solid var(--line);
     padding-bottom:1.2rem;
+    gap:1rem;
+    flex-wrap:wrap;
   }
   .mark{
     font-size:clamp(1.4rem,2.4vw,1.9rem);
     letter-spacing:.5em;
     font-weight:400;
     padding-left:.5em;
+    text-decoration:none;
   }
-  .est{
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.62rem;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--muted);
+  .nav{
+    display:flex;
+    gap:1.6rem;
+    font-size:.6rem;
+    letter-spacing:.22em;
   }
+  .nav a{text-decoration:none;color:var(--muted);transition:color .3s}
+  .nav a:hover{color:var(--ink)}
 
   /* Hero */
   .hero{
-    flex:1;
+    min-height:calc(100vh - 8rem);
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
     gap:2rem;
-    padding:2.5rem 0;
+    padding:3rem 0 4rem;
   }
   .crest{
     width:clamp(150px,20vw,230px);
@@ -71,7 +113,7 @@
     filter:drop-shadow(0 8px 22px rgba(27,26,24,.14));
   }
   .lede{
-    max-width:38ch;
+    max-width:34ch;
     font-size:clamp(1.35rem,3.4vw,2.5rem);
     font-weight:400;
     line-height:1.35;
@@ -84,34 +126,164 @@
     background:var(--line);
     animation:fade 1.4s ease 1s both;
   }
-
-  /* Access */
-  .access{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:1rem;
+  .hero-sub{
+    font-size:.62rem;
     animation:rise 1.3s ease 1.1s both;
   }
-  .access-label{
+
+  /* Sections */
+  section.block{
+    border-top:1px solid var(--line);
+    padding:clamp(3rem,7vw,5.5rem) 0;
+    display:grid;
+    grid-template-columns:minmax(0,220px) minmax(0,1fr);
+    gap:clamp(1.5rem,5vw,4rem);
+  }
+  .label{
+    font-size:.62rem;
+    padding-top:.5rem;
+  }
+  .body{max-width:62ch}
+  .body p{
+    font-size:clamp(1.05rem,1.6vw,1.25rem);
+    line-height:1.7;
+    margin-bottom:1.2rem;
+  }
+  .body p:last-child{margin-bottom:0}
+
+  /* Sectors */
+  .sectors{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem 1.8rem;
+    margin-top:1.8rem;
+    list-style:none;
     font-family:"Helvetica Neue",Arial,sans-serif;
     font-size:.62rem;
-    letter-spacing:.28em;
+    letter-spacing:.2em;
     text-transform:uppercase;
     color:var(--muted);
   }
-  .enter{
+  .sectors li{display:flex;align-items:center;gap:.55rem}
+  .sectors li::before{
+    content:"";
+    width:5px;height:5px;
+    border:1px solid var(--muted);
+    transform:rotate(45deg);
+  }
+  .sectors li.active{color:var(--ink)}
+  .sectors li.active::before{background:var(--accent);border-color:var(--accent)}
+  .sectors-note{
+    margin-top:.9rem;
     font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.72rem;
+    font-size:.58rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* Focus list */
+  .focus{list-style:none}
+  .focus li{
+    padding:1.4rem 0;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:2.2rem 1fr;
+    gap:1rem;
+  }
+  .focus li:first-child{padding-top:0}
+  .focus li:last-child{border-bottom:none;padding-bottom:0}
+  .focus .num{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.6rem;
+    letter-spacing:.2em;
+    color:var(--accent);
+    padding-top:.55rem;
+  }
+  .focus h3{
+    font-size:clamp(1.05rem,1.6vw,1.25rem);
+    font-weight:400;
+    margin-bottom:.3rem;
+  }
+  .focus p{
+    font-size:clamp(.95rem,1.3vw,1.05rem);
+    color:var(--muted);
+    line-height:1.65;
+  }
+  .focus a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(154,43,40,.35)}
+  .focus a:hover{border-bottom-color:var(--accent)}
+
+  /* Person */
+  .person{
+    display:grid;
+    grid-template-columns:minmax(0,180px) minmax(0,1fr);
+    gap:clamp(1.5rem,4vw,3rem);
+    align-items:start;
+  }
+  .portrait{
+    width:100%;
+    max-width:180px;
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:50%;
+    border:1px solid var(--line);
+    filter:grayscale(1) contrast(1.02);
+    display:block;
+  }
+  .person h3{
+    font-size:clamp(1.15rem,1.8vw,1.4rem);
+    font-weight:400;
+    margin-bottom:.15rem;
+  }
+  .role{
+    font-size:.6rem;
+    margin-bottom:1.2rem;
+    display:block;
+  }
+  .person p{
+    font-size:clamp(1rem,1.4vw,1.15rem);
+    line-height:1.7;
+    margin-bottom:.9rem;
+    max-width:56ch;
+  }
+  .person .links{
+    margin-top:1.2rem;
+    display:flex;
+    gap:1.6rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.6rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+  }
+  .person .links a{color:var(--muted);text-decoration:none;transition:color .3s}
+  .person .links a:hover{color:var(--ink)}
+
+  /* Contact */
+  .contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:2rem 3rem;
+  }
+  .contact h4{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.58rem;
     letter-spacing:.24em;
     text-transform:uppercase;
-    color:var(--ink);
-    text-decoration:none;
-    border:1px solid var(--ink);
-    padding:.9rem 2.6rem;
-    transition:all .35s ease;
+    color:var(--muted);
+    font-weight:400;
+    margin-bottom:.6rem;
   }
-  .enter:hover{background:var(--ink);color:var(--paper)}
+  .contact p{
+    font-size:clamp(.95rem,1.3vw,1.05rem);
+    line-height:1.7;
+  }
+  .contact a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .3s}
+  .contact a:hover{border-bottom-color:var(--accent)}
+  .contact .big{
+    font-size:clamp(1.15rem,2vw,1.5rem);
+    line-height:1.4;
+  }
 
   /* Footer */
   .foot{
@@ -120,96 +292,33 @@
     align-items:center;
     border-top:1px solid var(--line);
     padding-top:1.2rem;
+    margin-top:clamp(2rem,5vw,3.5rem);
     font-family:"Helvetica Neue",Arial,sans-serif;
     font-size:.6rem;
     letter-spacing:.18em;
     text-transform:uppercase;
     color:var(--muted);
     flex-wrap:wrap;
-    gap:.6rem;
+    gap:.6rem 1.5rem;
   }
   .foot a{color:var(--muted);text-decoration:none;transition:color .3s}
   .foot a:hover{color:var(--ink)}
-
-  /* Login overlay */
-  .gate{
-    position:fixed;inset:0;
-    background:rgba(20,24,28,.55);
-    backdrop-filter:blur(6px);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:50;
-    padding:1.5rem;
-  }
-  .gate.open{display:flex}
-  .card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    width:min(400px,100%);
-    padding:clamp(2rem,5vw,3rem);
-    text-align:center;
-  }
-  .card .mark{font-size:1.3rem;padding-left:.5em;margin-bottom:.4rem}
-  .card p{
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:2rem;
-  }
-  .field{margin-bottom:1rem;text-align:left}
-  .field label{
-    display:block;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:.4rem;
-  }
-  .field input{
-    width:100%;
-    background:transparent;
-    border:none;border-bottom:1px solid var(--line);
-    padding:.5rem 0;
-    font-family:"Georgia",serif;font-size:1rem;color:var(--ink);
-    outline:none;transition:border-color .3s;
-  }
-  .field input:focus{border-color:var(--accent)}
-  .invite{
-    font-family:"Georgia",serif;
-    font-size:.95rem;
-    line-height:1.7;
-    color:var(--ink);
-    margin-bottom:2rem;
-    text-align:left;
-  }
-  .submit{
-    display:block;
-    width:100%;margin-top:0;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
-    background:var(--ink);color:var(--paper);
-    border:none;padding:.95rem;cursor:pointer;transition:opacity .3s;
-    text-decoration:none;text-align:center;
-  }
-  .submit:hover{opacity:.85}
-  .close{
-    margin-top:1.4rem;display:inline-block;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--muted);background:none;border:none;cursor:pointer;
-  }
-  .note{
-    margin-top:1.6rem;
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);line-height:1.8;
-  }
 
   @keyframes fade{to{opacity:1}}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;opacity:1!important;transform:none!important}
   }
+  @media (max-width:720px){
+    section.block{grid-template-columns:1fr;gap:1.2rem}
+    .person{grid-template-columns:1fr}
+    .portrait{max-width:140px}
+    .hero{min-height:auto;padding:3rem 0}
+  }
   @media (max-width:520px){
     .mark{letter-spacing:.35em}
+    .top{justify-content:center}
+    .nav{gap:1.1rem}
     .foot{justify-content:center;text-align:center}
   }
 </style>
@@ -217,41 +326,119 @@
 <body>
   <div class="frame">
     <header class="top">
-      <div class="mark">HLS</div>
+      <a class="mark" href="#top">HLS</a>
+      <nav class="nav sans" aria-label="Seitennavigation">
+        <a href="#unternehmen">Unternehmen</a>
+        <a href="#schwerpunkte">Schwerpunkte</a>
+        <a href="#person">Person</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
     </header>
 
-    <main class="hero">
-      <img class="crest" src="crest.png" alt="HLS coat of arms">
-      <h1 class="lede">A private company.<br><em>Long horizons, few words.</em></h1>
-      <div class="rule"></div>
-      <div class="access">
-        <span class="access-label">By invitation</span>
-        <a class="enter" href="#" onclick="openGate(event)">Kontakt</a>
-      </div>
+    <main id="top">
+      <section class="hero">
+        <picture>
+          <source srcset="crest.webp" type="image/webp">
+          <img class="crest" src="crest.png" alt="Wappen der HLS Deutschland GmbH" width="640" height="875">
+        </picture>
+        <h1 class="lede">Eine private Holding.<br><em>Projekte mit langem Horizont.</em></h1>
+        <div class="rule"></div>
+        <p class="hero-sub sans">Handel · Leasing · Services &nbsp;—&nbsp; Leipzig</p>
+      </section>
+
+      <section class="block" id="unternehmen">
+        <div class="label sans">Was wir tun</div>
+        <div class="body">
+          <p>Die HLS Deutschland GmbH ist eine privat gehaltene Holding mit Sitz in Leipzig. Sie bündelt Beteiligungen und Projekte in fünf Sektoren: Mobility, Digital Infrastructure, Energy, Leasing und Industrial Services.</p>
+          <p>Aktiv ist HLS derzeit im Sektor Mobility: Personenbeförderung, Schienenersatzverkehr und die dazugehörige Depot- und Software-Infrastruktur.</p>
+          <ul class="sectors" aria-label="Sektoren">
+            <li class="active">Mobility</li>
+            <li>Digital Infrastructure</li>
+            <li>Energy</li>
+            <li>Leasing</li>
+            <li>Industrial Services</li>
+          </ul>
+          <div class="sectors-note">◆ derzeit aktiv</div>
+        </div>
+      </section>
+
+      <section class="block" id="schwerpunkte">
+        <div class="label sans">Aktuelle Schwerpunkte</div>
+        <div class="body">
+          <ol class="focus">
+            <li>
+              <span class="num">01</span>
+              <div>
+                <h3>Schienenersatzverkehr in Bayern</h3>
+                <p>Betriebserfahrung aus dem SEV-Einsatz und Konzepte für die Elektrifizierung von Ersatzverkehren: Fahrzeuge, Laden, Umläufe.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <div>
+                <h3>Busdepot-Systemhalle mit Photovoltaik</h3>
+                <p>Standardisierte Depot-Infrastruktur für elektrische Busflotten, mit Ladeinfrastruktur und eigener Stromerzeugung auf dem Dach.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <div>
+                <h3>PEK.digital</h3>
+                <p>Schwesterplattform der HLS für Disposition, Fuhrpark, Fahrer und Zeiterfassung, entwickelt für Busunternehmen mit 1 bis 150 Fahrzeugen im DACH-Raum. <a href="https://www.pek.digital" rel="noopener">www.pek.digital</a></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="block" id="person">
+        <div class="label sans">Person</div>
+        <div class="person">
+          <picture>
+            <source srcset="geschwinder.webp" type="image/webp">
+            <img class="portrait" src="geschwinder.jpg" alt="Gerhard Geschwinder" width="520" height="520" loading="lazy">
+          </picture>
+          <div>
+            <h3>Gerhard Geschwinder</h3>
+            <span class="role sans">Geschäftsführer</span>
+            <p>Kennt die Busbranche von innen: hat in Bayern selbst Schienenersatzverkehr gefahren, mit Fahrerqualifizierung, im Schichtbetrieb, an der Haltestelle.</p>
+            <p>Projektmanagement-Hintergrund aus drei Jahrzehnten in Konzernen, Beratung und eigenen Unternehmen in Europa, Asien und Afrika. Führt die HLS Deutschland GmbH seit 2020.</p>
+            <div class="links">
+              <a href="https://www.linkedin.com/in/gerhard-geschwinder-51460658/" rel="noopener">LinkedIn</a>
+              <a href="mailto:admin@hlsdeutschland.de?subject=HLS%20Deutschland%20GmbH">E-Mail</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="kontakt">
+        <div class="label sans">Kontakt</div>
+        <div class="contact">
+          <div>
+            <h4>E-Mail</h4>
+            <p class="big"><a href="mailto:admin@hlsdeutschland.de">admin@hlsdeutschland.de</a></p>
+          </div>
+          <div>
+            <h4>Telefon</h4>
+            <p class="big"><a href="tel:+4934186265625">+49 (341) 8626 5625</a></p>
+          </div>
+          <div>
+            <h4>Anschrift</h4>
+            <p>HLS Deutschland GmbH<br>Merkurhaus<br>Markgrafenstraße 2<br>04109 Leipzig</p>
+          </div>
+          <div>
+            <h4>Register</h4>
+            <p>Amtsgericht Leipzig<br>HRB 37458<br>USt-IdNr. DE331770803</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="foot">
-      <span>HLS Deutschland GmbH</span>
-      <span><a href="mailto:admin@hlsdeutschland.de">admin@hlsdeutschland.de</a> · <a href="impressum.html">Impressum</a></span>
-      <span>© 2026 · All rights reserved</span>
+      <span>HLS Deutschland GmbH · Leipzig</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+      <span>© 2026 · Alle Rechte vorbehalten</span>
     </footer>
   </div>
-
-  <div class="gate" id="gate" onclick="if(event.target===this)closeGate()">
-    <div class="card">
-      <div class="mark">HLS</div>
-      <p>By invitation</p>
-      <div class="invite">Access is granted by invitation only. If you believe you should have access, please get in touch and we will respond.</div>
-      <a class="submit" href="mailto:admin@hlsdeutschland.de?subject=HLS%20%E2%80%94%20Enquiry">Send an enquiry</a>
-      <div class="note">admin@hlsdeutschland.de</div>
-      <button class="close" onclick="closeGate()">Return</button>
-    </div>
-  </div>
-
-  <script>
-    function openGate(e){e.preventDefault();document.getElementById('gate').classList.add('open');}
-    function closeGate(){document.getElementById('gate').classList.remove('open');}
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGate();});
-  </script>
 </body>
 </html>
