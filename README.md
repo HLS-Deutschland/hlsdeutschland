@@ -43,7 +43,8 @@ Freigabestufe dazwischen.
 
 1. **Unternehmen** — was die Holding ist, plus die fünf Sektoren
    (Mobility, Digital Infrastructure, Energy, Leasing, Industrial Services).
-   Der derzeit aktive Sektor trägt die CSS-Klasse `active`.
+   Die derzeit aktiven Sektoren tragen die CSS-Klasse `active`: Mobility und
+   Digital Infrastructure.
 2. **Schwerpunkte** — vier aktuelle Projekte: Schienenersatzverkehr in Bayern,
    Busdepot-Systemhalle mit Photovoltaik, PEK.digital, Fördersignal Bus.
    Projekte mit eigener Domain werden zusätzlich im JSON-LD-Feld `sameAs` geführt.
