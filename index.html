@@ -262,9 +262,11 @@
   /* Contact */
   .contact{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    /* Spalten mindestens so breit, dass die E-Mail-Adresse als ein Wort hineinpasst */
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));
     gap:2rem 3rem;
   }
+  .contact>div{min-width:0}
   .contact h4{
     font-family:"Helvetica Neue",Arial,sans-serif;
     font-size:.58rem;
@@ -281,8 +283,10 @@
   .contact a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .3s}
   .contact a:hover{border-bottom-color:var(--accent)}
   .contact .big{
-    font-size:clamp(1.15rem,2vw,1.5rem);
+    font-size:clamp(1.05rem,1.8vw,1.35rem);
     line-height:1.4;
+    /* Notbremse: lieber umbrechen als in die Nachbarspalte laufen */
+    overflow-wrap:anywhere;
   }
 
   /* Footer */
