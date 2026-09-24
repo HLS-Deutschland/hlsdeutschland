@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HLS Deutschland GmbH · Holding für Mobilität, Infrastruktur und Energie · Leipzig</title>
-<meta name="description" content="HLS Deutschland GmbH ist eine privat gehaltene Holding mit Sitz in Leipzig. Beteiligungen und Projekte in Mobility, Digital Infrastructure, Energy, Leasing und Industrial Services. Aktuell aktiv im Bereich Mobility: Schienenersatzverkehr, Busdepot-Infrastruktur und PEK.digital.">
+<meta name="description" content="HLS Deutschland GmbH ist eine privat gehaltene Holding mit Sitz in Leipzig. Beteiligungen und Projekte in Mobility, Digital Infrastructure, Energy, Leasing und Industrial Services. Aktuell aktiv in Mobility und Digital Infrastructure: Schienenersatzverkehr, Busdepot-Infrastruktur, PEK.digital und Fördersignal Bus.">
 <link rel="canonical" href="https://hlsdeutschland.de/">
 <link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:type" content="website">
@@ -262,9 +262,11 @@
   /* Contact */
   .contact{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    /* Spalten mindestens so breit, dass die E-Mail-Adresse als ein Wort hineinpasst */
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));
     gap:2rem 3rem;
   }
+  .contact>div{min-width:0}
   .contact h4{
     font-family:"Helvetica Neue",Arial,sans-serif;
     font-size:.58rem;
@@ -281,8 +283,10 @@
   .contact a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .3s}
   .contact a:hover{border-bottom-color:var(--accent)}
   .contact .big{
-    font-size:clamp(1.15rem,2vw,1.5rem);
+    font-size:clamp(1.05rem,1.8vw,1.35rem);
     line-height:1.4;
+    /* Notbremse: lieber umbrechen als in die Nachbarspalte laufen */
+    overflow-wrap:anywhere;
   }
 
   /* Footer */
@@ -350,10 +354,10 @@
         <div class="label sans">Was wir tun</div>
         <div class="body">
           <p>Die HLS Deutschland GmbH ist eine privat gehaltene Holding mit Sitz in Leipzig. Sie bündelt Beteiligungen und Projekte in fünf Sektoren: Mobility, Digital Infrastructure, Energy, Leasing und Industrial Services.</p>
-          <p>Aktiv ist HLS derzeit im Sektor Mobility: Personenbeförderung, Schienenersatzverkehr und die dazugehörige Depot- und Software-Infrastruktur.</p>
+          <p>Aktiv ist HLS derzeit in zwei Sektoren: Mobility mit Personenbeförderung, Schienenersatzverkehr und der dazugehörigen Depot-Infrastruktur, Digital Infrastructure mit den eigenen Plattformen PEK.digital und Fördersignal.</p>
           <ul class="sectors" aria-label="Sektoren">
             <li class="active">Mobility</li>
-            <li>Digital Infrastructure</li>
+            <li class="active">Digital Infrastructure</li>
             <li>Energy</li>
             <li>Leasing</li>
             <li>Industrial Services</li>
@@ -390,8 +394,8 @@
             <li>
               <span class="num">04</span>
               <div>
-                <h3>Fördersignal</h3>
-                <p><strong>[Platzhalter — Beschreibung bitte ergänzen.]</strong> <a href="https://foerdersignal.de" rel="noopener">foerdersignal.de</a></p>
+                <h3>Fördersignal Bus</h3>
+                <p>Eigener Fachreport der HLS: Förderprogramme von Bund, Bayern und EU werden laufend beobachtet und monatlich auf das Profil des einzelnen Busbetriebs gefiltert, mit Frist und nächstem Schritt. Der Basisreport ist kostenlos. <a href="https://foerdersignal.de" rel="noopener">foerdersignal.de</a></p>
               </div>
             </li>
           </ol>
