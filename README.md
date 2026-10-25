@@ -31,7 +31,7 @@ Freigabestufe dazwischen.
 | `favicon.png` | Browser-Icon im Tab. |
 | `CNAME` | Bindet die Domain `hlsdeutschland.de` an GitHub Pages. |
 | `robots.txt` | Erlaubt Suchmaschinen alle Seiten und verweist auf die Sitemap. |
-| `sitemap.xml` | Liste der drei Seiten für Google & Co. |
+| `sitemap.xml` | Liste der indexierbaren Seiten für Google & Co. Derzeit nur die Startseite. |
 | `google630a63ead2efd5c7.html` | Bestätigungsdatei der Google Search Console. Belegt Google gegenüber den Besitz der Domain. |
 
 > `google630a63ead2efd5c7.html` nicht löschen. Verschwindet die Datei, verliert das
@@ -78,7 +78,9 @@ E-Mail oder eine Registernummer, müssen *alle* diese Stellen angefasst werden:
 `.png`/`.jpg`- als auch die `.webp`-Variante ersetzt werden — sonst sehen
 verschiedene Browser verschiedene Bilder.
 
-**`sitemap.xml` mit pflegen.** Kommt eine Seite dazu, gehört sie in die Sitemap.
+**`sitemap.xml` mit pflegen.** Kommt eine Seite dazu, gehört sie in die Sitemap — **außer sie trägt
+`noindex`**. Impressum und Datenschutz tragen `noindex` und stehen deshalb bewusst nicht drin: sonst
+meldet die Google Search Console „Eingereichte URL als 'noindex' gekennzeichnet".
 Bei inhaltlichen Änderungen das `<lastmod>`-Datum der betroffenen Seite aktualisieren.
 
 **Impressum und Datenschutzerklärung sind Pflichtangaben.** Beide Seiten müssen
